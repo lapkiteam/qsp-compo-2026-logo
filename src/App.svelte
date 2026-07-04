@@ -74,6 +74,7 @@
     "flex",
     "flex-col",
     "gap-3",
+    "max-w-[580px]"
   ])}>
     {#each diffs as diff}
       <Diff cardLeft={diff.left} cardRight={diff.right} />
