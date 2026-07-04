@@ -48,11 +48,35 @@
 </script>
 
 <main class={concat([
+  "w-full",
+  "p-3",
   "flex",
   "flex-col",
-  "gap-3",
+  "items-center",
+  "bg-gray-800",
+  "text-white",
 ])}>
-  {#each diffs as diff}
-    <Diff cardLeft={diff.left} cardRight={diff.right} />
-  {/each}
+  <h1 class={concat([
+    "text-4xl",
+    "text-center",
+    "py-3",
+  ])}>Улучшение лого QSP-COMPO-2026: добавить обводку</h1>
+  <img class={concat([
+    "w-[300px]",
+    "py-14",
+  ])} src="./qsp-compo-2026-outline.png" alt="">
+  <h2 class={concat([
+    "text-center",
+    "text-3xl",
+    "pb-6",
+  ])}>Сравнение</h2>
+  <div class={concat([
+    "flex",
+    "flex-col",
+    "gap-3",
+  ])}>
+    {#each diffs as diff}
+      <Diff cardLeft={diff.left} cardRight={diff.right} />
+    {/each}
+  </div>
 </main>
