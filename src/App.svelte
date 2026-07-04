@@ -1,24 +1,58 @@
 <script lang="ts">
   import { concat } from "./lib/utils"
+  import type { Card } from "./lib/card"
+  import Diff from "./component/Diff.svelte"
+
+  const diffs: { left: Card, right: Card }[] = [
+    {
+      left: {
+        title: "Темная тема без обводки",
+        src: "./темная-тема.png",
+      },
+      right: {
+        title: "Темная тема с обводкой",
+        src: "./темная-тема-с-обводкой.png",
+      },
+    },
+    {
+      left: {
+        title: "Светлая тема без обводки",
+        src: "./светлая-тема-без-обводки.png",
+      },
+      right: {
+        title: "Светлая тема с обводкой",
+        src: "./светлая-тема-с-обводкой.png",
+      },
+    },
+    {
+      left: {
+        title: "Модальное окно, темная тема",
+        src: "./модальное-окно-темная-тема.png",
+      },
+      right: {
+        title: "Модальное окно, темная тема с обводкой",
+        src: "./модальное-окно-темная-тема-с-обводкой.png",
+      },
+    },
+    {
+      left: {
+        title: "Модальное окно, светлая тема",
+        src: "./модальное-окно-светлая-тема.png",
+      },
+      right: {
+        title: "Модальное окно, светлая тема с обводкой",
+        src: "./модальное-окно-светлая-тема-с-обводкой.png",
+      },
+    },
+  ]
 </script>
 
-<main>
-  <div class={concat([
-    "flex",
-    "justify-center",
-  ])}>
-    <div class={concat([
-      "relative", // for children with absolute
-      "w-full",
-      "h-dvh",
-      "h-[calc(var(--vh,_1vh)_*_100)]",
-      "bg-gray-200",
-      "dark:bg-gray-800",
-      "dark:text-white",
-      "flex",
-      "flex-col",
-    ])}>
-      Hello world
-    </div>
-  </div>
+<main class={concat([
+  "flex",
+  "flex-col",
+  "gap-3",
+])}>
+  {#each diffs as diff}
+    <Diff cardLeft={diff.left} cardRight={diff.right} />
+  {/each}
 </main>
