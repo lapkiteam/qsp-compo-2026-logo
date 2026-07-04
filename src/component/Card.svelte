@@ -6,23 +6,26 @@
 </script>
 
 <div class={concat([
+  "size-full",
   "flex",
   "flex-col",
   "gap-3",
-  "w-[258px]",
+  "max-w-[258px]",
 ])}>
   <h2 class={concat([
     "text-xl",
     "text-center",
   ])}>{content.title}</h2>
   <div class={concat([
-    "h-[353px]",
     "overflow-clip",
+    "aspect-[258/353]",
+    "flex",
   ])}>
     <img
       class={concat([
-        "w-full",
-        "object-contain",
+        "aspect-square",
+        "object-cover",
+        "object-top",
       ])}
       src={content.src}
       alt="темная-тема.png"
