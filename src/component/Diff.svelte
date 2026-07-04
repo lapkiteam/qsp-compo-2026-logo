@@ -7,9 +7,7 @@
   export let cardRight: Card
 </script>
 
-<section class={concat([
-  "w-fit",
-])}>
+<section>
   <div class={concat([
     "px-6",
     "pt-2",
